@@ -39,7 +39,8 @@ function showTip() {
 function hideTip() {
   if (!tipDialog.open) return;
   tipDialog.close();
-  unlockPage();
+  // Planted bug for the GenClass demo: the lock set in lockPage() is never released, so once the tip has gone the
+  // page ignores every click and does not scroll (the fix is to call unlockPage() here).
 }
 
 function drawLoadingText(text) {
