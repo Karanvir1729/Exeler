@@ -1,0 +1,13 @@
+// Cloudflare Worker that serves the love.js build in dist/ as static assets (Pages is now part of Workers).
+// Deploy: npm run deploy (builds first). The game runs in love.js's compatibility build, so no COOP/COEP headers.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "exeler",
+  "compatibility_date": "2026-10-23",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "./dist"
+  }
+}

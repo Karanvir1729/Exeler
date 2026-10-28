@@ -1,0 +1,10 @@
+# Response headers for the static-assets Worker (same format as Cloudflare Pages).
+# The policy allows: this origin; jsDelivr for the GenClass script, its chunks, the model and ONNX Runtime
+# (script-src, connect-src); genclass.dev for its diagnostics (connect-src); WebAssembly (love.wasm, ONNX Runtime);
+# the model's Web Worker, started from a blob URL that imports the CDN module (worker-src); and inline styles, which GenClass's visual fixes write.
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://cdn.jsdelivr.net 'wasm-unsafe-eval'; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' https://cdn.jsdelivr.net https://genclass.dev; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'

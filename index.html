@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script src="genclass-config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@genclass/runtime@0.3.0-beta.4" integrity="sha384-pgK2ahNjpO9OnzO2w/y6fO+tTKwXmSxo24IMlyWDDKfBdLrz0w2xi0ES4LT7w4H3" crossorigin="anonymous" data-token="gc_JTrxIVWGg0Iho1D1KjynBQ" data-mode="guard" data-visual="fix" data-analytics="on" data-devtools defer></script> <!-- genclass:init -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Exeler</title>
+    <meta name="description" content="Exeler, an open-world RPG made with LÖVE 2D, playable in the browser.">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <meta property="og:title" content="Exeler">
+    <meta property="og:description" content="An open-world RPG made with LÖVE 2D, playable in the browser.">
+    <meta property="og:image" content="https://exeler.mehar-144.workers.dev/preview.png">
+    <meta property="og:url" content="https://exeler.mehar-144.workers.dev/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="theme/love.css">
+    <link rel="stylesheet" href="exeler.css">
+  </head>
+  <body>
+    <main class="page">
+      <header class="top">
+        <img class="cover" src="cover.png" width="136" height="80" alt="The title screen: a hero before a pixel-art landscape">
+        <div class="top-text">
+          <h1>Exeler</h1>
+          <p class="tagline">An open-world RPG made with LÖVE 2D, running in your browser.</p>
+        </div>
+      </header>
+
+      <dialog id="tip" class="tip" aria-labelledby="tip-title">
+        <h2 id="tip-title">How to play</h2>
+        <p>
+          Press <kbd>Enter</kbd> on the title screen to start. <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> or the arrow
+          keys move, <kbd>Enter</kbd> talks to villagers and reads signs, <kbd>Space</kbd> swings the sword and <kbd>B</kbd>
+          draws the bow.
+        </p>
+        <button type="button" class="tip-ok">Got it</button>
+      </dialog>
+
+      <div class="stage">
+        <canvas id="loadingCanvas" width="1280" height="720"></canvas>
+        <canvas id="canvas" tabindex="0" aria-label="Exeler game"></canvas>
+      </div>
+      <p id="status" class="status" role="status">Downloading…</p>
+
+      <section class="controls" aria-label="Controls">
+        <ul>
+          <li><kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> or the arrow keys to move</li>
+          <li><kbd>Enter</kbd> talks to NPCs and reads signs</li>
+          <li><kbd>Space</kbd> swings the sword, <kbd>B</kbd> draws the bow</li>
+        </ul>
+        <button type="button" class="fullscreen">Go fullscreen</button>
+      </section>
+
+      <footer class="credits">
+        <p>
+          Game by <a href="https://github.com/MD-Hamza/Exeler">MD-Hamza</a>. Built for the web with
+          <a href="https://github.com/Davidobot/love.js">love.js</a>. Graphics from OpenGameArt by ArMM1998, Wulax and ansimuz.
+          If the screen stays blank, reload the page.
+        </p>
+      </footer>
+    </main>
+
+    <script defer src="exeler.js"></script>
+    <script defer src="game.js"></script>
+    <script defer src="love.js"></script>
+  </body>
+</html>

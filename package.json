@@ -1,0 +1,17 @@
+{
+  "name": "exeler",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Exeler, an open-world LÖVE 2D RPG, built for the web with love.js and served from Cloudflare Workers as static assets",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "serve": "python3 -m http.server 8790 -d dist",
+    "preview": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "devDependencies": {
+    "love.js": "^11.4.1",
+    "wrangler": "^4.154.0"
+  }
+}
